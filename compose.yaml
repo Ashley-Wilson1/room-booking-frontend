@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+   server:
+      build:
+         context: .
+      environment:
+         NODE_ENV: development # Set to 'development' for using npm start
+      ports:
+         - 3000:3000 # Expose the app on port 3000 for development
+      volumes:
+         - .:/usr/src/app # Mount the local project directory for live code reloading
+      command: npm start # Ensure npm start is used
+
